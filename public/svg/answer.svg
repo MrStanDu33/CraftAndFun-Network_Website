@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="29px" viewBox="0 0 30 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>75484DA1-69FD-4E4A-ABF6-4884CDCF1B22</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Accueil" transform="translate(-984.000000, -1492.000000)" fill="#F0F0F0">
+            <g id="Content" transform="translate(37.000000, 680.000000)">
+                <g id="MainContainer" transform="translate(0.000000, 2.000000)">
+                    <g id="Sujets" transform="translate(0.000000, 707.000000)">
+                        <g id="Post" transform="translate(0.000000, 67.000000)">
+                            <g id="Answers" transform="translate(907.000000, 36.000000)">
+                                <g id="Answer" transform="translate(40.000000, 0.000000)">
+                                    <g>
+                                        <polygon id="Triangle" stroke="#F0F0F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(18.500000, 23.042287) scale(1, -1) translate(-18.500000, -23.042287) " points="23 19 23 27.0845731 14 27.0845731"></polygon>
+                                        <rect id="Rectangle-9" x="0" y="0" width="30" height="20" rx="3"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

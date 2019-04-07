@@ -1,0 +1,1990 @@
+/*varsity
+**    ______  ________  ____  _____  ________  _______          _       _____      ______  
+**  .' ___  ||_   __  ||_   \|_   _||_   __  ||_   __ \        / \     |_   _|   .' ____ \ 
+** / .'   \_|  | |_ \_|  |   \ | |    | |_ \_|  | |__) |      / _ \      | |     | (___ \_|
+** | |   ____  |  _| _   | |\ \| |    |  _| _   |  __ /      / ___ \     | |   _  _.____`. 
+** \ `.___]  |_| |__/ | _| |_\   |_  _| |__/ | _| |  \ \_  _/ /   \ \_  _| |__/ || \____) |
+**  `._____.'|________||_____|\____||________||____| |___||____| |____||________| \______.'
+**
+*/
+
+@font-face
+{
+	font-family: "Ubuntu";
+	src: url("../fonts/ubuntu/Ubuntu-R.ttf") format("truetype");
+}
+
+*
+{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+html
+{
+    height: 100%;
+}
+
+body
+{
+	margin: 0;
+	font-family: Ubuntu;
+	background-color: #F0F0F0;
+    height: 100%;
+    position: relative;
+}
+
+a
+{
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.1s linear;
+}
+
+.margincenter
+{
+	display: block;
+	margin: 0 auto;
+}
+
+.alignright
+{
+	position: absolute;
+	display: block;
+	right: 0
+}
+
+.alignleft
+{
+	position: absolute;
+	display: block;
+	left: 0;
+}
+
+.textcenter
+{
+	text-align: center;
+}
+
+.textright
+{
+	text-align: right;
+}
+
+.textleft
+{
+	text-align: left;
+}
+
+.toast
+{
+	opacity: 1 !important;
+}
+
+.block
+{
+	display: block;
+}
+
+.inline
+{
+	display: inline-block;
+}
+
+.flex
+{
+	display: flex;
+}
+
+/*
+**  ______   ________   ______   ___  ____  _________    ___   _______  
+** |_   _ `.|_   __  |.' ____ \ |_  ||_  _||  _   _  | .'   `.|_   __ \ 
+**   | | `. \ | |_ \_|| (___ \_|  | |_/ /  |_/ | | \_|/  .-.  \ | |__) |
+**   | |  | | |  _| _  _.____`.   |  __'.      | |    | |   | | |  ___/ 
+**  _| |_.' /_| |__/ || \____) | _| |  \ \_   _| |_   \  `-'  /_| |_    
+** |______.'|________| \______.'|____||____| |_____|   `.___.'|_____|   
+**
+*/
+
+header
+{
+	height: 100px;
+	width: 100%;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	border-bottom: 10px solid #ffc73f;
+	position: fixed;
+	display: inline-flex;
+	justify-content: space-between;
+	background-color: #F0F0F0;
+	z-index: 999;
+}
+
+header .logo
+{
+	display: inline-block;
+	height: 80px;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+header ul
+{
+	display: inline-flex;
+	justify-content: space-between;
+	height: 90px;
+	margin: 0;
+	padding: 0;
+}
+
+header ul li
+{
+	list-style-type: none;
+	display: inline-block;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-self: flex-start
+	height: 90px;
+	margin: 0;
+	padding: 0;
+	margin: 0 15px 0 15px;
+}
+
+header ul li:first-of-type
+{
+	margin-left: 0;
+}
+
+header ul li a
+{
+	display: block;
+	height: 20px;
+	vertical-align: middle;
+	margin-top: 37px;
+	font-weight: bold;
+	border-bottom: 0px solid #ffc73f;
+}
+
+header ul li.active a
+{
+	color: #ffc73f;
+	border-bottom: 3px solid #ffc73f;
+}
+
+header ul li:hover a
+{
+	border-bottom: 3px solid #ffc73f;
+}
+
+.headerspacer
+{
+	height: 100px;
+	width: 100%;
+}
+
+section#accueil .slider
+{
+	position: relative;
+	height: 583px;
+	border-bottom: 10px solid #ffc73f;
+	overflow: hidden;
+}
+
+section#accueil .slider .VideoContainer
+{
+	z-index: -100;
+	height: 573px;
+	position: absolute;
+	width: 100%;
+}
+
+section#accueil .slider .VideoContainer video
+{
+	display: block;
+	min-width: 100%;
+	height: auto;
+}
+
+section#accueil .VideoContainer img
+{
+	display: block;
+	width: 100%;
+	height: 573px;
+}
+
+section#accueil .slider .container
+{
+	display: block;
+	width: 100%;
+	height: 573px;
+	position: absolute;
+}
+
+section#accueil .slider .container svg
+{
+	display: block;
+	width: 192px;
+	height: 200px;
+	margin: 0 auto;
+	margin-top: 137px;
+	margin-bottom: 79px;
+	-webkit-filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.5));      
+	filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.5));  
+}
+
+section#accueil .slider .container .toGrow
+{
+	font-size: 23px;
+	transform: scale(1.0);
+}
+
+section#accueil .slider .container .toGrow:hover
+{
+	transform: scale(1.1);
+	transition: all 0.1s linear;
+}
+
+section#container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: center;
+}
+
+section#container .MainBlock
+{
+	width: calc(100% - 321px - 5%);
+	margin: 0 auto;
+	position: relative;
+	height: 100%;
+}
+
+.greyFilter
+{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+}
+
+section#container .MainBlock div.PagePath
+{
+	height: 17px;
+	margin: 25px 0 58px 0;
+	font-family: Arial;
+	font-size: 15px;
+	color: #7f79a4;
+	vertical-align: text-top;
+}
+
+section#container .MainBlock div.PagePath *
+{
+	vertical-align: text-top;
+	font-size: 19px;
+}
+
+section#container .MainBlock section
+{
+	position: relative;
+}
+
+section#container .MainBlock section h2
+{
+	display: block;
+	font-family: Ubuntu;
+	font-size: 42px;
+	font-weight: bold;
+	color: #2a242c;
+	padding: 0;
+	text-align: center;
+	margin-top: 20px;
+	position: relative;
+	width: max-content;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+section#container .MainBlock .BlogLastPost .billetBlog
+{
+	min-height: 200px;
+	min-width: 360px;
+	border: solid 3px #ffc73f;
+	margin-top: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+section#container .MainBlock .BlogLastPost .billetBlog img
+{
+	height: calc(100% - 3px);
+	vertical-align: top;
+}
+
+section#container .MainBlock .BlogLastPost .billetBlog .blogcontent
+{
+	min-width: 360px;
+	max-width: calc(100% - 360px);
+	font-family: Ubuntu;
+	font-size: 14px;
+}
+
+section#container .MainBlock .BlogLastPost .billetBlog .blogcontent h3
+{
+	margin: 0;
+	padding: 17px 0 10px 20px;
+	font-family: Ubuntu;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+section#container .MainBlock .BlogLastPost .billetBlog .blogcontent span
+{
+	font-family: Ubuntu;
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+section#container .MainBlock .BlogLastPost .billetBlog .blogcontent div
+{
+	margin-top: 10px;
+	font-family: Arial;
+	font-size: 23px;
+	margin-bottom: 10px;
+}
+
+section#container .MainBlock .ForumLastPost .postForum
+{
+	width: 100%;
+	height: 100px;
+	border: solid 3px #ffc73f;
+	margin-top: 20px;
+}
+
+section#container .MainBlock .ForumLastPost .postForum .avatar
+{
+	height: 50px;
+	width: 50px;
+	background-color: #2e2c4a;
+	border: solid 3px #d32f2f;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 22px 20px 22px 20px;
+	vertical-align: top;
+}
+
+section#container .MainBlock .ForumLastPost .postForum h3
+{
+	margin: 0;
+	padding: 0;
+	font-family: Ubuntu;
+	font-size: 30px;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 94px;
+	vertical-align: top;
+	padding-right: 20px;
+}
+
+section#container .MainBlock .ForumLastPost .postForum .tagtype
+{
+	display: inline-block;
+	width: 100px;
+	height: 20px;
+	border-radius: 3px;
+	background-color: rgba(216, 216, 216, 0.34);
+	font-family: Arial;
+	font-size: 13px;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
+	margin-top: 37px;
+	margin-right: 10px;
+}
+
+section#container .MainBlock .ForumLastPost .postForum .answers
+{
+	height: 29px;
+	line-height: 29px;
+	float: right;
+	margin-top: 33px;
+	margin-right: 20px;
+}
+
+section#container .MainBlock .ForumLastPost .postForum .answers span
+{
+	display: inline-block;
+	height: 29px;
+	line-height: 29px;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+section#container .MainBlock .h2Desc
+{
+	font-family: Ubuntu;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+section#container .MainBlock section.VotesSelectPlayer ul.PlayerSelection
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 65px;
+}
+
+section#container .MainBlock section.VotesSelectPlayer ul.PlayerSelection>li
+{
+	list-style: none;
+	display: block;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.76);
+	margin: 0 15px 30px 15px;
+	cursor: pointer;
+	z-index: 5;
+}
+
+section#container .MainBlock section.VotesSelectPlayer ul.PlayerSelection>li img.PlayerHead
+{
+	display: inline-block;
+	margin: 35px 0 35px 0;
+	transition: ease 0.2s all;
+}
+
+section#container .MainBlock section.VotesSelectPlayer ul.PlayerSelection>li:hover img.PlayerHead
+{
+	display: inline-block;
+	margin: 35px 0 35px 0;
+	transform: scale(1.25);
+	transition: ease 0.3s all;
+	-webkit-filter: drop-shadow(0px 0px 4px #222);
+	filter: drop-shadow(0px 0px 4px #222);
+}
+
+section#container .MainBlock section.VotesSelectPlayer ul.PlayerSelection>li h3.ServerName
+{
+	color: #FFFFFF;
+	font-family: Ubuntu;
+	font-weight: normal;
+	font-size: 23px;
+	margin: 0;
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 65px;
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li
+{
+	list-style: none;
+	display: block;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.76);
+	margin: 0 15px 30px 15px;
+	cursor: pointer;
+	z-index: 5;
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li.processing
+{
+	background-color: #F89406 !important;
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li.disabled, section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li.disabled *
+{
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li.disabled:hover img.SiteLogo
+{
+	opacity: 0.7;
+	cursor: not-allowed;
+	transform: scale(1);
+	-webkit-filter: drop-shadow(0px 0px 0px #000);
+	filter: drop-shadow(0px 0px 0px #000);
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li img.SiteLogo
+{
+	display: inline-block;
+	margin: 35px 0 35px 0;
+	transition: ease 0.2s all;
+	width: 75%;
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li:hover img.SiteLogo
+{
+	transform: scale(1.25);
+	transition: ease 0.3s all;
+	-webkit-filter: drop-shadow(0px 0px 4px #222);
+	filter: drop-shadow(0px 0px 4px #222);
+}
+
+section#container .MainBlock section.VotesSelectSite ul.SiteSelection>li h3.SiteName
+{
+	color: #FFFFFF;
+	font-family: Ubuntu;
+	font-weight: normal;
+	font-size: 23px;
+	margin: 0;
+}
+
+section#container .MainBlock .formContainer
+{
+	display: flex;
+	width: calc(100% - 200px);
+	margin: 0 auto;
+	flex-flow: row wrap
+}
+
+section#container .MainBlock .formContainer div.preview, section#container .MainBlock .formContainer form.player
+{
+	width: 50%;
+	margin-top: 70px;
+	padding: 0 80px 0 80px;
+}
+
+section#container .MainBlock .formContainer div.preview
+{
+	border-right: 1.75px solid #ffc73f;
+}
+
+section#container .MainBlock .formContainer form.player
+{
+	border-left: 1.75px solid #ffc73f;
+}
+
+section#container .MainBlock .formContainer form h3
+{
+	margin: 0;
+	font-family: Ubuntu;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+section#container .MainBlock ul.ServerSelection
+{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 65px;
+}
+
+section#container .MainBlock ul.ServerSelection>li
+{
+	list-style: none;
+	display: block;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.76);
+	margin: 0 15px 30px 15px;
+	cursor: pointer;
+	z-index: 5;
+}
+
+section#container .MainBlock ul.ServerSelection>li.toDelete
+{
+	list-style: none;
+	display: block;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.76);
+	margin: 0 15px 30px 15px;
+	cursor: pointer;
+	z-index: 5;
+	opacity: 0;
+}
+
+section#container .MainBlock ul.ServerSelection>li img.ServerIcon
+{
+	display: inline-block;
+	margin: 35px 0 35px 0;
+	transition: ease 0.2s all;
+}
+
+section#container .MainBlock ul.ServerSelection>li:hover img.ServerIcon
+{
+	display: inline-block;
+	margin: 35px 0 35px 0;
+	transform: scale(1.25);
+	transition: ease 0.3s all;
+	-webkit-filter: drop-shadow(0px 0px 4px #222);
+	filter: drop-shadow(0px 0px 4px #222);
+}
+
+section#container .MainBlock ul.ServerSelection>li h3.ServerName
+{
+	color: #FFFFFF;
+	font-family: Ubuntu;
+	font-weight: normal;
+	font-size: 23px;
+	margin: 0;
+}
+
+section#container .MainBlock ul.ServerSelection>li ul.SectionSelection
+{
+	display: none;
+	padding: 0 40px 0 40px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+section#container .MainBlock ul.ServerSelection>li ul.SectionSelection>li
+{
+	list-style: none;
+	display: block;
+	height: 42px;
+	width: 100%;
+	border-bottom: 1px solid #979797;
+	cursor: pointer;
+	clear: both;
+}
+
+section#container .MainBlock ul.ServerSelection>li ul.SectionSelection>li span.SectionName
+{
+	float: left;
+	display: inline-block;
+	height: 100%;
+	margin: 0 0 8px 10px;
+	line-height: 42px;
+	font-family: Ubuntu;
+	font-size: 23px;
+	color: #ffffff;
+}
+
+section#container .MainBlock ul.ServerSelection>li ul.SectionSelection>li span.SectionCount
+{
+	float: right;
+	display: inline-block;
+	height: 100%;
+	margin: 0 0 8px 10px;
+	line-height: 42px;
+	font-family: Ubuntu;
+	font-size: 14px;
+	color: #ffffff;
+}
+
+section#container .MainBlock ul.ServerSelection>li ul.SectionSelection>a.linkbutton
+{
+	margin-top: 60px;
+}
+
+section#container .MainBlock .PostsList
+{
+	margin-top: 135px;
+}
+
+section#container .MainBlock .PostsList .postForum
+{
+	width: 100%;
+	height: 100px;
+	border: solid 3px #ffc73f;
+	margin-top: 20px;
+}
+
+section#container .MainBlock .PostsList .postForum .avatar
+{
+	height: 50px;
+	width: 50px;
+	background-color: #2e2c4a;
+	border: solid 3px #d32f2f;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 22px 20px 22px 20px;
+	vertical-align: top;
+}
+
+section#container .MainBlock .PostsList .postForum h3
+{
+	margin: 0;
+	padding: 0;
+	font-family: Ubuntu;
+	font-size: 30px;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 94px;
+	vertical-align: top;
+}
+
+section#container .MainBlock .PostsList .postForum .smallinformation
+{
+	font-family: Arial;
+	font-size: 15px;
+	text-align: right;
+	color: #7f79a4;
+	line-height: 94px;
+}
+
+section#container .MainBlock .PostsList .postForum .answers
+{
+	height: 29px;
+	line-height: 29px;
+	float: right;
+	margin-top: 33px;
+	margin-right: 20px;
+}
+
+section#container .MainBlock .PostsList .postForum .answers .smallinformation
+{
+	font-weight: normal;
+	font-size: 15px;
+}
+
+section#container .MainBlock .PostsList .postForum .answers .smallinformation.lastMessage
+{
+	margin-right: 15px;
+}
+
+section#container .MainBlock .PostsList .postForum .answers .smallinformation.firstMessage
+{
+	margin-left: 15px;
+	margin-right: 0px;
+}
+
+section#container .MainBlock .PostsList .postForum .answers span
+{
+	display: inline-block;
+	height: 29px;
+	line-height: 29px;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+section#container .MainBlock .Post h3
+{
+	font-family: Ubuntu;
+	margin: 0;
+	margin-bottom: 10px;
+	padding: 0;
+	font-size: 23px;
+	color: #000000;
+}
+
+section#container .MainBlock .Post .answer:not(#WYSIWYG)
+{
+	width: 100%;
+	min-height: 331px;
+	border: solid 1px #9b9b9b;
+	background-color: #ffffff;
+	display: flex;
+	margin-bottom: 10px;
+}
+
+section#container .MainBlock .Post .answer#WYSIWYG
+{
+	width: 100%;
+	min-height: 331px;
+	border: solid 1px #9b9b9b;
+	background-color: #ffffff;
+}
+
+.trumbowyg-box.trumbowyg-editor-visible.trumbowyg-fr.trumbowyg
+{
+	margin-bottom: 82px !important;
+}
+
+section#container .MainBlock .Post .answer .profile
+{
+	width: 15%;
+	max-width: 150px;
+	background-color: #2a242c;
+}
+
+section#container .MainBlock .Post .answer .profile a
+{
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+section#container .MainBlock .Post .answer .profile .avatar
+{
+	width: 100px;
+	height: 100px;
+	background-color: #2e2c4a;
+	border: solid 3px #d32f2f;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+section#container .MainBlock .Post .answer .profile .name
+{
+	font-family: Ubuntu;
+	font-size: 23px;
+	text-align: center;
+	color: #ffffff;
+}
+
+section#container .MainBlock .Post .answer .profile .messageCount
+{
+	font-family: Ubuntu;
+	font-size: 17px;
+	color: #ffffff;
+}
+
+section#container .MainBlock .Post .answer .profile .messageCount span
+{
+	font-weight: bold;
+}
+
+section#container .MainBlock .Post .answer .profile .reputation
+{
+	font-family: Ubuntu;
+	font-size: 17px;
+	color: #ffffff;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+section#container .MainBlock .Post .answer .profile .grade
+{
+	font-family: Ubuntu;
+	font-size: 17px;
+	font-weight: bold;
+	color: #d32f2f;
+}
+
+section#container .MainBlock .Post .answer .profile .dateInscriptionDesc
+{
+	font-family: Ubuntu;
+	font-size: 17px;
+	color: #ffffff;
+	margin-top: 4px;
+}
+
+section#container .MainBlock .Post .answer .profile .dateInscription
+{
+	font-family: Ubuntu;
+	font-size: 17px;
+	color: #9b9b9b;
+}
+
+section#container .MainBlock .Post .answer .core
+{
+	width: 100%;
+	height: 100%;
+	min-height: 331px;
+}
+
+section#container .MainBlock .Post .answer .core .message
+{
+	width: 100%;
+	height: calc(100% - 30px);
+	min-height: 300px;
+	border-bottom: solid 1px #9b9b9b;
+	padding: 10px;
+	font-family: Ubuntu;
+	font-size: 17px;
+	color: #000000;
+}
+
+section#container .MainBlock .Post .answer .core .message iframe
+{
+	width: 100%;
+	height: calc(100% - 30px);
+	min-height: 300px;
+	border-bottom: solid 1px #9b9b9b;
+	padding: 10px;
+	font-family: Ubuntu;
+	font-size: 17px;
+	color: #000000;
+}
+
+section#container .MainBlock .Post .answer .core .message .iframecontainer
+{
+	height: 380px;
+	width: 764px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+section#container .MainBlock .Post .answer .core .message .iframecontainer .bandeau
+{
+	border-radius: 3px 0 0 3px;
+	width: 4px;
+	height: 100%
+}
+
+section#container .MainBlock .Post .answer .core .message .iframecontainer .container
+{
+	border-radius: 0 3px 3px 0;
+	width: calc(100% - 4px);
+	border-color: rgba(46,48,54,.6);
+	padding: 10px;
+	height: 100%;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer
+{
+	width: 430px;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .bandeau
+{
+	border-radius: 3px 0 0 3px;
+	width: 4px;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .container
+{
+	border-radius: 0 3px 3px 0;
+	width: calc(100% - 4px);
+	border-color: rgba(46,48,54,.6);
+	padding: 10px;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .container .domain
+{
+	padding: 0;
+	margin: 0;
+	color: hsla(0,0%,100%,.6);
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 16px;
+	white-space: pre-line;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .container .title
+{
+	padding: 0;
+	margin: 0;
+	margin-top: 4px;
+	text-decoration: none;
+	color: #80E5E5;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 16px;
+	white-space: pre-line;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .container .title:hover
+{
+	text-decoration: underline;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .container .description
+{
+	padding: 0;
+	margin: 0;
+	margin-top: 4px;
+	color: hsla(0,0%,100%,.6);
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 16px;
+	white-space: pre-line;
+	margin-bottom: 4px;
+}
+
+section#container .MainBlock .Post .answer .core .message .linkViewer .container img
+{
+    max-width: 400px;
+    max-height: 225px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+    display: none;
+}
+
+section#container .MainBlock .Post .answer .core .footer
+{
+	width: 100%;
+	height: 30px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 5px;
+	color: #9b9b9b;
+}
+
+section#container .MainBlock .Post .answer .core .footer div, section#container .MainBlock .Post .answer .core .footer span, section#container .MainBlock .Post .answer .core .footer i
+{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+section#container .MainBlock .Post .answer .core .footer span
+{
+	font-family: Ubuntu;
+	font-size: 10px;
+	font-weight: 300;
+}
+
+section#container .MainBlock .Post .answer .core .footer div *
+{
+	margin-left: 0;
+}
+
+section#container .MainBlock .Post .answer .core .footer div i
+{
+	vertical-align: middle;
+}
+
+section#container .MainBlock .Post .answer .core .footer div .thumb
+{
+	color: #3ab1c7;
+}
+
+section#container .MainBlock .Post .answer .core .footer div .fire
+{
+	color: #f15a24;
+}
+
+section#container .MainBlock .MapViewer iframe
+{
+	width: calc(100% - 40px);
+	min-height: 900px;
+	height: calc(100% - 40px);
+	border: none;
+}
+
+section#container .MainBlock .formContainer
+{
+	display: flex;
+	width: calc(100% - 200px);
+	margin: 0 auto;
+	flex-flow: row wrap
+}
+
+section#container .MainBlock .formContainer form.connexion, section#container .MainBlock .formContainer form.inscription
+{
+	width: 50%;
+	margin-top: 70px;
+	padding: 0 80px 0 80px;
+}
+
+section#container .MainBlock .formContainer form.connexion
+{
+	border-right: 1.75px solid #ffc73f;
+}
+
+section#container .MainBlock .formContainer form.inscription
+{
+	border-left: 1.75px solid #ffc73f;
+}
+
+section#container .MainBlock .formContainer form h3
+{
+	margin: 0;
+	font-family: Ubuntu;
+	font-size: 35px;
+	font-weight: bold;
+}
+section#container .MainBlock .formContainer form div.threecollumn
+{
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 709px;
+	margin: 0 auto;
+}
+
+input:not([type="submit"]), select, textarea
+{
+	margin-top: 25px;
+	border-radius: 5px;
+	border: solid 1.5px #ffc73f;
+	background-color: #e4e4e4;
+	padding: 5px;
+	color: #4a4a4a;
+	font-family: Arial;
+	font-size: 18px;
+}
+
+input:focus, select:focus, textarea:focus
+{
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+	outline: none;
+}
+
+input::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+{
+	color: #4a4a4a;
+}
+
+input:-moz-placeholder, select:-moz-placeholder, textarea:-moz-placeholder
+{
+	color: #4a4a4a;
+}
+
+input::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder
+{
+	color: #4a4a4a;
+}
+
+input:-ms-input-placeholder, select:-ms-input-placeholder, textarea:-ms-input-placeholder
+{
+	color: #4a4a4a;
+}
+
+input:disabled, select:disabled, textarea:disabled
+{
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+input.longinput, select.longinput
+{
+	width: calc(100% - 10px);
+}
+
+input.shortinput, select.shortinput
+{
+	width: 225px;
+}
+
+input.shortinput.inputSplitLeft,select.shortinput.inputSplitLeft
+{
+	margin-right: 17px;
+}
+
+section#container .MainBlock .formContainer form a.forgottenPassword
+{
+	display: block;
+	font-family: Arial;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: calc(50% - 108px);
+}
+
+section#container .MainBlock .formContainer form input.brand--button--border--tier2
+{
+	margin-top: 25px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+section#container .MainBlock .formContainer form .rangeslider, .rangeslider__fill
+{
+	display:block;
+	border-radius:10px;
+}
+
+section#container .MainBlock .formContainer form .rangeslider
+{
+	position:relative;
+}
+
+section#container .MainBlock .formContainer form .rangeslider:after
+{
+	top: 50%;
+	left: 0;
+	right: 0;
+	content: '';
+	width: 100%;
+	height: 10px;
+	margin-top: -5px;
+	border-radius: 5px;
+	position: absolute;
+	background: #E4E4E4;
+}
+
+section#container .MainBlock .formContainer form .rangeslider--horizontal
+{
+	width: 100%;
+	height: 28px;
+}
+
+section#container .MainBlock .formContainer form .rangeslider--vertical
+{
+	width: 5px;
+	min-height: 150px;
+	max-height: 100%;
+}
+
+section#container .MainBlock .formContainer form .rangeslider--disabled
+{
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+	opacity: 0.4;
+}
+
+section#container .MainBlock .formContainer form .rangeslider__fill
+{
+	position: absolute;
+	background: #FFC73F;
+}
+
+section#container .MainBlock .formContainer form .rangeslider--horizontal .rangeslider__fill
+{
+	top: 0;
+	height: 100%;
+}
+
+section#container .MainBlock .formContainer form .rangeslider--vertical .rangeslider__fill
+{
+	bottom: 0;
+	width: 100%;
+}
+
+section#container .MainBlock .formContainer form .rangeslider__handle
+{
+	top: 50%;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+	margin-top: -7px;
+	background: white;
+	position: absolute;
+	background: #FFC73F;
+	border-radius: 50%;
+	display: inline-block;
+	box-shadow: 0px 0px 0px 10px rgba(255, 199, 63,0.1), 0px 0px 0px 5px rgba(255, 199, 63,0.3), 0 0 4px 0 rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0px 0px 0px 10px rgba(255, 199, 63,0.1), 0px 0px 0px 5px rgba(255, 199, 63,0.3), 0 0 4px 0 rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 0px 0px 10px rgba(255, 199, 63,0.1), 0px 0px 0px 5px rgba(255, 199, 63,0.3), 0 0 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+section#container .MainBlock .formContainer form .rangeslider__handle:active
+{
+	background: #FFC73F;
+}
+
+section#container .MainBlock .formContainer form .rangeslider__fill, .rangeslider__handle
+{
+	z-index:1;
+}
+
+section#container .MainBlock .formContainer form .rangeslider--horizontal .rangeslider__fill
+{
+	top: 50%;
+	height: 10px;
+	margin-top: -5px;
+}
+
+section#container .MainBlock .formContainer form .budget
+{
+	width: 50%;
+	margin: 0 auto;
+}
+
+section#container .MainBlock .formContainer form .budget .pull-right
+{
+	color: #4a4a4a;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+section#container .MainBlock .formContainer form div.redalertInfo
+{
+	font-size: 12px;
+	color: #d32f2f;
+	opacity: 0.75;
+}
+
+section#container .MainBlock .formContainer form table
+{
+	position: relative;
+	overflow-x: hidden;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+	width: 240px;
+	border-collapse: collapse;
+	letter-spacing: 1px;
+	font-family: sans-serif;
+	font-size: .8rem;
+	margin: 20px 0 0 auto;
+}
+
+section#container .MainBlock .formContainer form table tr
+{
+	height: 35px;
+}
+
+section#container .MainBlock .formContainer form table tr.totalprice::after
+{
+	word-break: keep-all;
+	display: block;
+	position: absolute;
+	left: -1px;
+	top: 140px;
+	font-size: 18px;
+	letter-spacing: 3px;
+	content: "..............................";
+	width: 100%;
+	height: 1px;
+}
+
+section#container .MainBlock .formContainer form table tr td, section#container .MainBlock .formContainer form table tr th
+{
+	padding: 5px;
+}
+
+section#container .MainBlock .formContainer form table tr td
+{
+	text-align: right;
+	font-weight: bold;
+}
+
+section#container .MainBlock .formContainer form table tr th[scope="col"]
+{
+	color: #838383;
+}
+
+section#container .MainBlock .formContainer form table tr th[scope="row"]
+{
+	text-align: left;
+	color: #838383;
+}
+
+section#container .MainBlock .formContainer form table tr td.spikes
+{
+	position: absolute;
+	bottom: -12px;
+	left: -0.9px;
+	width: 100%;
+	overflow: hidden;
+	height: 20px;
+	padding: 0;
+}
+
+section#container .MainBlock .formContainer form table tr td.spikes div.spike
+{
+	margin-left: -1.6px;
+	transform: rotate(45deg);
+	width: 7.07px;
+	height: 7.07px;
+	background-color: #FFFFFF;
+	display: inline-block;
+	-webkit-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.75);
+}
+
+section#container>.MainBlock>.profilContainer>form
+{
+	width: 925px;
+	padding: 5px 5px 19px 15px;
+	border-radius: 5px;
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2), inset 0 -4px 0 0 #ffc73f;
+	background-color: #ffffff;
+	margin-top: 60px;
+	position: relative;
+}
+
+section#container>.MainBlock>.profilContainer>form>p.sectionName
+{
+	font-family: Ubuntu;
+	font-size: 25px;
+	font-weight: bold;
+	color: #4b4763;
+	position: absolute;
+	top: -45px;
+	margin: 0;
+}
+
+section#container>.MainBlock>.profilContainer>form label
+{
+	width: 100px;
+	margin-right: 10px;
+	font-family: Ubuntu;
+	font-size: 16px;
+	font-weight: 300;
+	color: #4b4763;
+	letter-spacing: -1px;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+
+section#container>.MainBlock>.profilContainer>form input, section#container>.MainBlock>.profilContainer>form textarea
+{
+	margin-top: 10px;
+	margin-right: 10px;
+	vertical-align: middle;
+	resize: none;
+}
+
+section#container>.MainBlock>.profilContainer>form a.brand--button--border--tier2
+{
+	vertical-align: middle;
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 34px;
+	width: 225px;
+	line-height: 31px;
+	font-size: 18px;
+	text-align: center;
+}
+
+section#container>.MainBlock>.profilContainer>form input
+{
+	width: 225px;
+}
+
+section#container>.MainBlock>.profilContainer>form textarea
+{
+	width: 100%;
+	height: 115px;
+	max-width: 460px;
+	margin-right: 0;
+}
+
+section#container>.MainBlock>.profilContainer>form.flex
+{
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+section#container>.MainBlock>.profilContainer>form.flex>*.flexbreaker
+{
+	flex-basis: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section #SideBar
+{
+	width: 321px;
+	background-color: #DDDDDD;
+}
+
+section #SideBar .Brick
+{
+	min-height: 248px;
+	width: 100%;
+	border-left: solid 3px #ffc73f;
+	border-bottom: solid 3px #ffc73f;
+	font-family: Arial;
+	font-size: 23px;
+	color: #f0f0f0;
+}
+
+section #SideBar .Brick h3
+{
+	margin: 0;
+	padding: 0;
+	padding-top: 20px;
+}
+
+section #SideBar .Brick.servers .collumn
+{
+	width: 75%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+section #SideBar .Brick.servers .collumn .skillsTop
+{
+	text-align: left;
+	font-family: Ubuntu;
+	font-size: 14px;
+	font-weight: bold;
+	color: #f0f0f0;
+}
+
+section #SideBar .Brick.servers .collumn .skillsTop .numberplayer
+{
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+
+section #SideBar .Brick.servers .collumn .skillsBottom
+{
+	width: 100%;
+	margin: 16px 0px 0px 0px;
+}
+
+section #SideBar .Brick.servers .collumn .skillsBottom .progress
+{
+	height: 10px;
+	border-radius: 10px;
+	background-color: #4b4763;
+}
+
+section #SideBar .Brick.servers .collumn .skillsBottom .progress .progress-bar
+{
+	width: 0%;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #ffc73f;
+	padding-left: 10px;
+}
+
+section #SideBar .Brick.servers .collumn .skillsBottom .progress .server
+{
+	-webkit-transition: width 4.50s ease !important;
+	-moz-transition: width 4.50s ease !important;
+	-o-transition: width 4.50s ease !important;
+	transition: width 4.50s ease !important;
+}
+
+section #SideBar .Brick.servers .collumn .skillsBottom .progress .progress-bar .Oval
+{
+	margin-top: -2px;
+	float: right;
+	width: 14px;
+	height: 14px;
+	background-color: #ffc73f;
+	border-radius: 50%;
+	-webkit-transition: width 4.50s ease !important;
+	-moz-transition: width 4.50s ease !important;
+	-o-transition: width 4.50s ease !important;
+	transition: width 4.50s ease !important;
+	box-shadow: 0px 0px 0px 10px rgba(255, 199, 63,0.1), 0px 0px 0px 5px rgba(255, 199, 63,0.3), 0 0 4px 0 rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0px 0px 0px 10px rgba(255, 199, 63,0.1), 0px 0px 0px 5px rgba(255, 199, 63,0.3), 0 0 4px 0 rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 0px 0px 10px rgba(255, 199, 63,0.1), 0px 0px 0px 5px rgba(255, 199, 63,0.3), 0 0 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+section #SideBar .Brick.discord .connected
+{
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+section #SideBar .Brick.discord .members
+{
+	margin-bottom: 20px;
+}
+
+section #SideBar .Brick.partners ul
+{
+	display: flex;
+	padding: 0;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center
+}
+
+section #SideBar .Brick.partners ul li
+{
+	list-style: none;
+	display: block;
+	height: 136px;
+	min-width: 50%;
+}
+
+section #SideBar .Brick.partners ul li .logo
+{
+	height: 80px;
+	width: 80px;
+	background-color: #2e2c4a;
+	border: solid 3px #d32f2f;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 6px;
+}
+
+section #SideBar .Brick.partners ul li .logo.Live
+{
+	border: solid 3px #80e5e5;
+}
+
+section #SideBar .Brick.partners ul li .ChannelLive
+{
+	font-family: Arial;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+}
+
+section #SideBar .Brick.partners ul li .viewersLive
+{
+	display: block;
+}
+
+section #SideBar .Brick.cookie .countCookies
+{
+	margin-top: 9px;
+}
+
+section #SideBar .Brick.cookie img
+{
+	display: block;
+	width: 160px;
+	height: 160px;
+	margin: 0 auto;
+	margin-top: 16px;
+	margin-bottom: 20px;
+}
+
+footer
+{
+	min-height: 200px;
+	width: 100%;
+	background-color: #4b4763;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+footer a:hover
+{
+	transition: all 0.1s linear;
+	color: #ffc73f;
+}
+
+footer .section
+{
+	min-height: 200px;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	flex: auto;
+	max-width: calc(100% / 3);
+}
+
+footer .section:first-of-type p
+{
+	margin-left: 20px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	transition: all 0.1s linear;
+}
+
+footer .section:first-of-type p:first-of-type
+{
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+footer .section:first-of-type p:last-of-type
+{
+	margin-top: 60px;
+}
+
+footer .section:first-of-type p:last-of-type .triggerhover
+{
+	transition: all 0.1s linear;
+}
+
+footer:hover .section:first-of-type p:last-of-type .triggerhover
+{
+	transition: all 0.1s linear;
+	color: #ffc73f;
+}
+
+footer .section i
+{
+	padding-right: 4px;
+	font-size: 25px;
+	display: inline-block;
+	vertical-align: text-top;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+footer .section h5
+{
+	display: inline-block;
+	font-family: Arial;
+	font-size: 16px;
+	line-height: 25px;
+	font-weight: bold;
+	vertical-align: bottom;
+	padding: 0;
+	margin: 0;
+}
+
+footer .section div
+{
+	display: inline-block;
+	margin-left: 20px;
+	width: calc(calc(100% / 2) - 40px);
+	vertical-align: top;
+	margin-top: 5px;
+}
+
+footer .section div i
+{
+	margin-top: 0;
+}
+
+footer .section div h6
+{
+	display: inline-block;
+	font-family: Arial;
+	font-size: 16px;
+	line-height: 25px;
+	font-weight: bold;
+	vertical-align: bottom;
+	padding: 0;
+	margin: 0;
+}
+
+footer .section div ul
+{
+	margin: 0;
+	padding: 0;
+	padding-left: 20px;
+	margin-top: 5px;
+}
+
+footer .section div ul li
+{
+	list-style: none;
+}
+
+/*
+**  _________     _       ______   _____     ________  _________ 
+** |  _   _  |   / \     |_   _ \ |_   _|   |_   __  ||  _   _  |
+** |_/ | | \_|  / _ \      | |_) |  | |       | |_ \_||_/ | | \_|
+**     | |     / ___ \     |  __'.  | |   _   |  _| _     | |    
+**    _| |_  _/ /   \ \_  _| |__) |_| |__/ | _| |__/ |   _| |_   
+**   |_____||____| |____||_______/|________||________|  |_____|  
+**
+*/
+
+
+
+/*
+**  ______   _______          _       ____  _____  ______   
+** |_   _ \ |_   __ \        / \     |_   \|_   _||_   _ `. 
+**   | |_) |  | |__) |      / _ \      |   \ | |    | | `. \
+**   |  __'.  |  __ /      / ___ \     | |\ \| |    | |  | |
+**  _| |__) |_| |  \ \_  _/ /   \ \_  _| |_\   |_  _| |_.' /
+** |_______/|____| |___||____| |____||_____|\____||______.' 
+**
+*/
+
+.linkbutton
+{
+	width: 225px;
+}
+
+.brand--button--border--tierconfirmred
+{
+	width: 170px;
+	height: 44px;
+	border-radius: 3px;
+	background-color: #d32f2f;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+	line-height: 44px;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	font-size: 23px;
+	color: #FFFFFF;
+}
+
+.brand--button--border--tierconfirmred:hover
+{
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+}
+
+.brand--button--border--tierconfirmtransparent
+{
+	width: 170px;
+	height: 44px;
+	line-height: 44px;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	font-size: 23px;
+	color: #FFFFFF;
+}
+
+.brand--button--border--tierconfirmtransparent:hover
+{
+	text-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+}
+
+.brand--button--border--tier1
+{
+	width: 225px;
+	height: 52.5px;
+	border-radius: 5px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.66);
+	border: solid 1.5px #ffc73f;
+	line-height: 52px;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	font-size: 23px;
+}
+
+.brand--button--border--tier1:hover
+{
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+	background-color: rgba(0, 0, 0, 0.88) !important;
+}
+
+.brand--button--border--tier2
+{
+	width: 225px;
+	height: 52.5px;
+	border-radius: 5px;
+	border: solid 1.5px #ffc73f;
+	line-height: 52px;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	font-size: 23px;
+}
+
+.brand--button--border--tier2:hover
+{
+	background-color: #ffc73f !important;
+	color: #FFFFFF;
+}
+
+.brand--button--border--tier3
+{
+	width: 225px;
+	height: 52.5px;
+	line-height: 52px;
+	transition: all 0.1s linear;
+	cursor: pointer;
+	font-size: 23px;
+}
+.brand--button--border--tier3:hover
+{
+}
+
+.brand--cursor-pointer
+{
+	cursor: pointer;
+}
+
+.brand--color--yellow
+{
+	color: #ffc73f;
+}
+
+.brand--color--white
+{
+	color: #f0f0f0;
+}
+
+.brand--color--ultra-light-violet
+{
+	color: #9b9b9b;
+}
+
+.brand--color--light-violet
+{
+	color: #4b4763;
+}
+
+.brand--color--dark-violet
+{
+	color: #2a242c;
+}
+
+.brand--color--blue
+{
+	color: #80e5e5;
+}
+
+.brand--background-color--yellow
+{
+	background-color: #ffc73f;
+}
+
+.brand--background-color--white
+{
+	background-color: #f0f0f0;
+}
+
+.brand--background-color--ultra-light-violet
+{
+	background-color: #9b9b9b;
+}
+
+.brand--background-color--light-violet
+{
+	background-color: #4b4763;
+}
+
+.brand--background-color--dark-violet
+{
+	background-color: #2a242c;
+}
+
+.brand--background-color--blue
+{
+	background-color: ;
+}
