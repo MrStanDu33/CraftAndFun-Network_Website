@@ -1718,6 +1718,7 @@ footer .section
 	font-weight: bold;
 	flex: auto;
 	max-width: calc(100% / 3);
+	position: relative;
 }
 
 footer .section:first-of-type p
@@ -1736,7 +1737,8 @@ footer .section:first-of-type p:first-of-type
 
 footer .section:first-of-type p:last-of-type
 {
-	margin-top: 60px;
+	position: absolute;
+	bottom: 0,
 }
 
 footer .section:first-of-type p:last-of-type .triggerhover
